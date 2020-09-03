@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: rgb(36, 26, 1);
+    color: whitesmoke;
+    overflow-x: hidden;
+  
+
+}
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    .slider{
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+        height: 100vh;
+        width: 100vw;
+        &:nth-child(1){
+            background: url('./img/model-1.jpg') no-repeat center center/cover;
+        }
+        &:nth-child(2){
+            background: url('./img/project-1.jpg') no-repeat center center/cover;
+        }
+        &:nth-child(3){
+            background: url('./img/project-2.jpg') no-repeat center center/cover;
+        }
+        &:nth-child(4){
+            background: url('./img/project-3.jpg') no-repeat center center/cover;
+        }
+        &:nth-child(5){
+            background: url('./img/project-4.jpg') no-repeat center center/cover;
+        }
+        &-content{
+            padding: 35px;
+            position: absolute;
+            width: 600px;
+            top: 500px;
+            background: rgba(243, 236, 236,0.8);
+            color: rgba(29, 25, 25, 0.8);
+            left: -600px;
+            
+            
+
+           
+           
+        }
+        &.current{
+            opacity: 1;
+           .slider-content{
+               
+              transform: translateX(600px);
+               transition: all 2s ease-in-out;
+           }
+
+        }
+
+        @media (max-width : 800px) {
+
+
+            &-content{
+                width: 100vw;
+              
+                transform: translateY(300px);
+               
+                left: 0;
+                height: 300px;
+            }
+
+           &.current{
+               .slider-content{
+                
+                  transform: translateY(-30px);
+               }
+           }
+           
+        } 
+       
+    }
+
+}
+        .buttons{
+            button{
+    
+                background:transparent;
+                color: whitesmoke;
+                padding: 20px;
+                border: 2px solid goldenrod;
+                &:hover{
+                    background: whitesmoke;
+                    color: black;
+                    
+                }
+
+            }
+            #prev{
+                position: absolute;
+                top: 50vh;
+                left: 5px;
+            }
+            #next{
+                position: absolute;
+                top: 50vh;
+                right: 5px;
+            }
+        }
+
+        .others{
+            height: 100vh;
+            width: 100vw;
+            margin-top: 20px;
+            
+            div{
+                height: 100vh;
+               padding-top: 20vh;
+                text-align: center;
+            }
+        }

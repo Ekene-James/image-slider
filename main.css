@@ -1,0 +1,122 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #241a01;
+  color: whitesmoke;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.container .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container .slider:nth-child(1) {
+  background: url("./img/model-1.jpg") no-repeat center center/cover;
+}
+
+.container .slider:nth-child(2) {
+  background: url("./img/project-1.jpg") no-repeat center center/cover;
+}
+
+.container .slider:nth-child(3) {
+  background: url("./img/project-2.jpg") no-repeat center center/cover;
+}
+
+.container .slider:nth-child(4) {
+  background: url("./img/project-3.jpg") no-repeat center center/cover;
+}
+
+.container .slider:nth-child(5) {
+  background: url("./img/project-4.jpg") no-repeat center center/cover;
+}
+
+.container .slider-content {
+  padding: 35px;
+  position: absolute;
+  width: 600px;
+  top: 500px;
+  background: rgba(243, 236, 236, 0.8);
+  color: rgba(29, 25, 25, 0.8);
+  left: -600px;
+}
+
+.container .slider.current {
+  opacity: 1;
+}
+
+.container .slider.current .slider-content {
+  -webkit-transform: translateX(600px);
+          transform: translateX(600px);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+@media (max-width: 800px) {
+  .container .slider-content {
+    width: 100vw;
+    -webkit-transform: translateY(300px);
+            transform: translateY(300px);
+    left: 0;
+    height: 300px;
+  }
+  .container .slider.current .slider-content {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+}
+
+.buttons button {
+  background: transparent;
+  color: whitesmoke;
+  padding: 20px;
+  border: 2px solid goldenrod;
+}
+
+.buttons button:hover {
+  background: whitesmoke;
+  color: black;
+}
+
+.buttons #prev {
+  position: absolute;
+  top: 50vh;
+  left: 5px;
+}
+
+.buttons #next {
+  position: absolute;
+  top: 50vh;
+  right: 5px;
+}
+
+.others {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 20px;
+}
+
+.others div {
+  height: 100vh;
+  padding-top: 20vh;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
